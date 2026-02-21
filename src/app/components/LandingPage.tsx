@@ -30,7 +30,7 @@ export default function LandingPage() {
             {/* Logo Circle - Overlapping the top edge */}
             <div className="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-20">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] bg-black/40 backdrop-blur-md overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                 <img src="/src/assets/logo.png" alt="Outbrake Logo" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
+                 <img src="/logo.png" alt="Outbrake Logo" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
               </div>
             </div>
 
