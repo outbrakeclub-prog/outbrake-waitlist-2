@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import WaitlistForm from './WaitlistForm';
-import logoImg from "figma:asset/ab3e7adcf6da035d027415b3b757a73941a2dda1.png";
 
 export default function LandingPage() {
   return (
@@ -29,9 +28,9 @@ export default function LandingPage() {
             className="relative w-full max-w-2xl mt-16"
           >
             {/* Logo Circle - Overlapping the top edge */}
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-20">
+            <div className="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-20">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] bg-black/40 backdrop-blur-md overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                 <img src={logoImg} alt="Outbrake Logo" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
+                 <img src="/src/assets/logo.png" alt="Outbrake Logo" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
               </div>
             </div>
 
@@ -44,12 +43,12 @@ export default function LandingPage() {
               <div className="absolute -inset-[100%] top-0 block h-[200%] w-1/2 -rotate-12 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:animate-shine pointer-events-none" />
 
               {/* Brand Name - Racing Sans One */}
-              <h1 className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tighter mb-4 uppercase" style={{ fontFamily: '"Racing Sans One", sans-serif' }}>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl text-white tracking-tighter mb-4 uppercase" style={{ fontFamily: '"Racing Sans One", sans-serif' }}>
                 Outbrake
               </h1>
 
               {/* Hero Phrase - Work Sans Extra Bold 800 - Sentence case, period */}
-              <p className="text-xl md:text-2xl text-white/90 tracking-[0.2em] mb-12 border-b border-white/30 pb-4 inline-block" style={{ fontFamily: '"Work Sans", sans-serif', fontWeight: 800 }}>
+              <p className="text-xl md:text-2xl text-white/90 mb-8 border-b border-white/30 pb-4 inline-block" style={{ fontFamily: '"Work Sans", sans-serif', fontWeight: 700 }}>
                 A new generation of racing.
               </p>
 
