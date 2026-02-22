@@ -50,13 +50,28 @@ export default function LandingPage() {
 
               {/* Hero Phrase - Work Sans Extra Bold 800 - Sentence case, period */}
               <p className="text-xl md:text-2xl text-white/90 mb-8 border-b border-white/30 pb-4 inline-block" style={{ fontFamily: '"Work Sans", sans-serif', fontWeight: 700 }}>
-                A new generation of racing.
+                Apparel for the relentless.
               </p>
 
               {/* Description - Work Sans Medium 500 */}
-              <p className="text-base md:text-lg text-white/70 max-w-lg mx-auto mb-10 leading-relaxed" style={{ fontFamily: '"Work Sans", sans-serif', fontWeight: 500 }}>
-                Receive all the news about Outbrake and be the first to know when the brand goes live.
+              <p className="text-base md:text-lg text-white/70 max-w-lg mx-auto mb-4 leading-relaxed" style={{ fontFamily: '"Work Sans", sans-serif', fontWeight: 500 }}>
+                Where racewear meets real life. Crafted for races, designed for everything after.
               </p>
+
+              <p className="text-sm text-white/70 max-w-lg mx-auto mb-0 leading-relaxed italic" style={{ fontFamily: '"Work Sans", sans-serif', fontWeight: 500 }}>
+                Launching soon, don't miss it
+              </p>
+
+              {/* Animated arrow */}
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="flex justify-center mt-0 mb-6"
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40">
+                  <path d="M12 5v14M5 12l7 7 7-7" />
+                </svg>
+              </motion.div>
 
               {/* Form */}
               <div className="max-w-xl mx-auto">
