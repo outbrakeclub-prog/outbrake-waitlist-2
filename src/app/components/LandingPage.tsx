@@ -66,7 +66,7 @@ export default function LandingPage() {
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="flex justify-center mt-0 mb-6"
+                className="flex justify-center mt-1 mb-6"
               >
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40">
                   <path d="M12 5v14M5 12l7 7 7-7" />
