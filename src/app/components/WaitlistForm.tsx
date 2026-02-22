@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Loader2, ArrowRight, Check } from 'lucide-react';
 import { toast } from 'sonner';
+import { Link } from 'react-router';
 import { createClient } from '@supabase/supabase-js';
 
 // Connexion à Supabase
@@ -52,41 +53,46 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 w-full max-w-2xl mx-auto items-stretch">
-      <div className="flex-1 relative group">
-        <input
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          placeholder="First name"
-          required
-          className="w-full h-12 px-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white placeholder:text-white/50 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
-        />
-      </div>
-      <div className="flex-1 relative group">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email address"
-          required
-          className="w-full h-12 px-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white placeholder:text-white/50 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
-        />
-      </div>
-      <button
-        type="submit"
-        disabled={loading}
-        className="h-12 px-8 bg-[#00295B] text-white font-bold rounded-full hover:bg-[#003da8] transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap shadow-lg shadow-[#00295B]/30"
-      >
-        {loading ? (
-          <Loader2 className="w-4 h-4 animate-spin" />
-        ) : (
-          <>
-            Join the waitlist
-            <ArrowRight className="w-4 h-4" />
-          </>
-        )}
-      </button>
-    </form>
+    <div className="w-full max-w-2xl mx-auto">
+      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 w-full items-stretch">
+        <div className="flex-1 relative group">
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="First name"
+            required
+            className="w-full h-12 px-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white placeholder:text-white/50 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
+          />
+        </div>
+        <div className="flex-1 relative group">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email address"
+            required
+            className="w-full h-12 px-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white placeholder:text-white/50 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all"
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={loading}
+          className="h-12 px-8 bg-[#00295B] text-white font-bold rounded-full hover:bg-[#003da8] transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap shadow-lg shadow-[#00295B]/30 cursor-pointer"
+        >
+          {loading ? (
+            <Loader2 className="w-4 h-4 animate-spin" />
+          ) : (
+            <>
+              Join the waitlist
+              <ArrowRight className="w-4 h-4" />
+            </>
+          )}
+        </button>
+      </form>
+      <p className="mt-4 text-xs text-white/30 text-center font-light">
+        By signing up, you agree to our <Link to="/privacy" className="hover:text-white/50 underline decoration-white/30 transition-colors">Privacy Policy</Link>. Unsubscribe anytime.
+      </p>
+    </div>
   );
 }

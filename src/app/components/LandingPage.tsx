@@ -1,16 +1,17 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router';
 import WaitlistForm from './WaitlistForm';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#111] p-2 md:p-3 flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen bg-[#111] flex items-center justify-center overflow-hidden">
       {/* Main Container with borders revealed */}
-      <div className="relative w-full h-[calc(100vh-16px)] md:h-[calc(100vh-24px)] rounded-2xl overflow-hidden shadow-2xl shadow-black">
+      <div className="relative w-full h-screen overflow-hidden shadow-2xl shadow-black">
         
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1666947520667-371348873d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3RvcnNwb3J0JTIwcmFjZXIlMjB3aXRoJTIwY2FyJTIwYmxhY2slMjBhbmQlMjB3aGl0ZXxlbnwxfHx8fDE3NzE2ODk1NjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+            src="/backgroundd.png"
             alt="Motorsport racer with car" 
             className="w-full h-full object-cover grayscale brightness-75 contrast-125"
           />
@@ -25,7 +26,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative w-full max-w-2xl mt-16"
+            className="relative w-full max-w-2xl mt-16 px-4 md:px-0"
           >
             {/* Logo Circle - Overlapping the top edge */}
             <div className="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-20">
@@ -35,7 +36,7 @@ export default function LandingPage() {
             </div>
 
             {/* Liquid Glass Rectangle Container */}
-            <div className="w-full bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-6 md:p-10 pt-20 md:pt-24 shadow-2xl relative overflow-hidden group">
+            <div className="w-full bg-white/5 backdrop-blur-[2px] border border-white/10 rounded-3xl p-6 md:p-10 pt-20 md:pt-24 shadow-2xl relative overflow-hidden group">
               {/* Subtle glass reflection effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
               
@@ -65,9 +66,14 @@ export default function LandingPage() {
 
           </motion.div>
 
-          {/* Footer/Copyright (Optional nice touch) */}
-          <div className="absolute bottom-6 md:bottom-10 text-white/20 text-xs uppercase tracking-widest">
-            © 2026 Outbrake Motorsport
+          {/* Footer/Links */}
+          <div className="absolute bottom-6 md:bottom-10 flex gap-6 text-xs uppercase tracking-widest z-20">
+            <Link to="/legal" className="text-white/30 hover:text-white/60 transition-colors duration-300">
+              Legal Notice
+            </Link>
+            <Link to="/privacy" className="text-white/30 hover:text-white/60 transition-colors duration-300">
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </div>
